@@ -15,8 +15,6 @@ body {
   line-height: 1.6;
 }
 
-/* ================= GLOBAL ================= */
-
 section {
   width: 100%;
   padding: 90px 0;
@@ -28,7 +26,6 @@ section {
   padding: 0 32px;
 }
 
-/* ================= TEXT ================= */
 
 h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -58,12 +55,11 @@ ul {
   list-style: none;
 }
 
-/* ================= NAVBAR ================= */
-
+/*NAVBAR*/
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
   background: rgba(2, 6, 23, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -88,7 +84,38 @@ ul {
   font-weight: 500;
 }
 
-/* ================= HERO ================= */
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/*BUTTONS*/
+
+.buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 10px;
+  border: 1px solid #38bdf8;
+  margin-right: 12px;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn.primary {
+  background: #38bdf8;
+  color: #020617;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.3);
+}
+
+/*HERO*/
 
 .hero {
   background:
@@ -124,7 +151,56 @@ ul {
   box-shadow: 0 0 60px rgba(56,189,248,0.5);
 }
 
-/* ================= PROJECT PAGE ================= */
+/*EDUCATION*/
+
+.education {
+  background: #020617;
+}
+
+.edu-card {
+  background: #0f172a;
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/*PROJECTS*/
+
+.projects {
+  background: #020617;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 40px;
+}
+
+.project-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card {
+  background: #0f172a;
+  padding: 26px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+/* PROJECT PAGES*/
 
 .project-page {
   background: linear-gradient(180deg, #020617, #0b1120);
@@ -136,8 +212,7 @@ ul {
   font-size: 1.1rem;
 }
 
-/* ================= PROJECT GALLERY ================= */
-
+/* ORDERED IMAGE BOXES */
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -151,18 +226,18 @@ ul {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.45);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
 }
 
+/* IMAGE FIT FIX (NO CROPPING) */
 .project-item img {
   width: 100%;
-  height: 260px;
+  height: 220px;
   object-fit: contain;
   background: #020617;
   padding: 12px;
@@ -172,21 +247,55 @@ ul {
 .project-item p {
   padding: 16px 18px 20px;
   font-size: 0.95rem;
+  color: #cbd5f5;
   background: #0b1120;
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* ================= FOOTER ================= */
+/*SKILLS*/
+
+.skills {
+  background: #020617;
+}
+
+.skills ul li {
+  margin-bottom: 14px;
+}
+
+/*EXPERIENCE*/
+
+.experience {
+  background: #020617;
+}
+
+.exp-card {
+  background: #0f172a;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.exp-card ul li {
+  margin-bottom: 10px;
+}
+
+/*CONTACT*/
+
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  font-weight: 600;
+}
+
+/*FOOTER*/
 
 footer {
   padding: 30px;
   text-align: center;
   color: #94a3b8;
-  background: #020617;
 }
-
-/* ================= FULLSCREEN LIGHTBOX ================= */
-/* MUST BE LAST */
 
 .lightbox {
   position: fixed;
@@ -214,11 +323,27 @@ footer {
   border-radius: 12px;
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* RESPONSIVE */
 
 @media (max-width: 1000px) {
   .project-gallery {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .profile-img {
+    margin: 0 auto 30px;
+  }
+
+  .nav-links {
+    display: none;
   }
 }
 
