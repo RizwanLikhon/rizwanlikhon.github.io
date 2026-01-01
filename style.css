@@ -1,9 +1,8 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Inter", system-ui, Arial, sans-serif;
 }
 
 html {
@@ -11,12 +10,11 @@ html {
 }
 
 body {
-  background: #0b1120;
+  background-color: #0b1120;
   color: #e5e7eb;
   line-height: 1.6;
 }
 
-/* ================= GLOBAL ================= */
 section {
   width: 100%;
   padding: 90px 0;
@@ -48,11 +46,14 @@ p {
 }
 
 a {
-  text-decoration: none;
   color: #38bdf8;
+  text-decoration: none;
 }
 
-/* ================= NAVBAR ================= */
+ul {
+  list-style: none;
+}
+
 .navbar {
   position: sticky;
   top: 0;
@@ -74,20 +75,17 @@ a {
 .nav-logo {
   font-weight: 700;
   font-size: 1.1rem;
-  color: #e5e7eb;
 }
 
 .nav-links a {
   margin-left: 24px;
   font-weight: 500;
-  color: #cbd5f5;
 }
 
 .nav-links a:hover {
   color: #38bdf8;
 }
 
-/* ================= BUTTONS ================= */
 .buttons {
   margin-top: 30px;
 }
@@ -113,11 +111,10 @@ a {
   box-shadow: 0 10px 30px rgba(56,189,248,0.3);
 }
 
-/* ================= HERO ================= */
 .hero {
   background:
-    radial-gradient(circle at 20% 20%, rgba(56,189,248,0.15), transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(139,92,246,0.15), transparent 40%),
+    radial-gradient(circle at 20% 20%, rgba(56,189,248,0.18), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(139,92,246,0.18), transparent 40%),
     linear-gradient(180deg, #020617, #0b1120);
 }
 
@@ -126,6 +123,17 @@ a {
   grid-template-columns: 1.2fr 0.8fr;
   gap: 70px;
   align-items: center;
+}
+
+.hero-text h2 {
+  color: #38bdf8;
+  margin-top: 15px;
+}
+
+.hero-text p {
+  max-width: 650px;
+  margin-top: 18px;
+  font-size: 1.05rem;
 }
 
 .profile-img {
@@ -137,18 +145,6 @@ a {
   box-shadow: 0 0 60px rgba(56,189,248,0.5);
 }
 
-.hero-text h2 {
-  margin-top: 15px;
-  color: #38bdf8;
-}
-
-.hero-text p {
-  max-width: 650px;
-  margin-top: 18px;
-  font-size: 1.05rem;
-}
-
-/* ================= EDUCATION ================= */
 .education {
   background: #020617;
 }
@@ -160,7 +156,6 @@ a {
   border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* ================= PROJECTS ================= */
 .projects {
   background: #020617;
 }
@@ -196,13 +191,6 @@ a {
   margin-top: 8px;
 }
 
-.project-links a {
-  display: inline-block;
-  margin-top: 12px;
-  font-weight: 600;
-}
-
-/* ================= SKILLS ================= */
 .skills {
   background: #020617;
 }
@@ -211,7 +199,21 @@ a {
   margin-bottom: 14px;
 }
 
-/* ================= CONTACT ================= */
+.experience {
+  background: #020617;
+}
+
+.exp-card {
+  background: #0b1120;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.exp-card ul li {
+  margin-bottom: 10px;
+}
+
 .contact {
   text-align: center;
 }
@@ -220,14 +222,12 @@ a {
   font-weight: 600;
 }
 
-/* ================= FOOTER ================= */
 footer {
   padding: 30px;
   text-align: center;
   color: #94a3b8;
 }
 
-/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
   .hero-content {
     grid-template-columns: 1fr;
