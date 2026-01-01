@@ -5,13 +5,20 @@
   font-family: "Inter", system-ui, Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #0b1120;
   color: #e5e7eb;
   line-height: 1.6;
 }
 
+/* ================= GLOBAL ================= */
+
 section {
+  width: 100%;
   padding: 90px 0;
 }
 
@@ -26,43 +33,73 @@ h1 {
   margin-bottom: 20px;
 }
 
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
 p {
   color: #cbd5f5;
 }
 
-/* NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: rgba(2, 6, 23, 0.9);
-  backdrop-filter: blur(12px);
-  z-index: 1000;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px 32px;
-}
-
-.nav-links a {
-  margin-left: 24px;
+a {
   color: #38bdf8;
   text-decoration: none;
 }
 
-/* PROJECT PAGE */
+ul {
+  list-style: none;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.nav-links a {
+  margin-left: 24px;
+  font-weight: 500;
+}
+
+/* ================= PROJECT PAGE ================= */
+
 .project-page {
   background: linear-gradient(180deg, #020617, #0b1120);
 }
 
 .project-intro {
-  max-width: 700px;
+  max-width: 720px;
   margin-bottom: 60px;
   font-size: 1.1rem;
 }
 
-/* IMAGE GRID */
+/* ================= PROJECT GALLERY ================= */
+
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -72,7 +109,10 @@ p {
 .project-item {
   background: #0f172a;
   border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 }
 
@@ -82,15 +122,27 @@ p {
   object-fit: contain;
   background: #020617;
   padding: 12px;
+  display: block;
 }
 
 .project-item p {
-  padding: 16px;
+  padding: 16px 18px 20px;
+  font-size: 0.95rem;
   background: #0b1120;
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* FULLSCREEN LIGHTBOX */
+/* ================= FOOTER ================= */
+
+footer {
+  padding: 30px;
+  text-align: center;
+  color: #94a3b8;
+  background: #020617;
+}
+
+/* ================= FULLSCREEN LIGHTBOX ================= */
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -101,7 +153,7 @@ p {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  z-index: 9999;
+  z-index: 99999;
 }
 
 .lightbox.active {
@@ -112,9 +164,13 @@ p {
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
+  object-fit: contain;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+  border-radius: 12px;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 1000px) {
   .project-gallery {
     grid-template-columns: repeat(2, 1fr);
